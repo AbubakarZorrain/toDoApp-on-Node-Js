@@ -36,7 +36,9 @@ app.get('/login', (req, res) => {
 	res.render('index');
 });
 app.get('/', (req, res) => {
-	res.send('hello world!');
+  var existAccounts = getAccountData();
+  console.log(existAccounts.task);
+  res.render('index', {existAccounts: existAccounts});
 });
 app.post('/addtodo', (req, res) => {
 	try {
@@ -46,8 +48,9 @@ app.post('/addtodo', (req, res) => {
 		existAccounts[newAccountId] = req.body;
 
 		saveAccountData(existAccounts);
-
-		res.send({ success: true, msg: 'account added successfully' });
+		// send message to client
+		res.render('index', { message: 'Todo added successfully' });
+		// res.send({ success: true, msg: 'account added successfully' });
 	} catch (error) {
 		res.send(error);
 	}

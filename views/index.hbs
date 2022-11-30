@@ -19,16 +19,22 @@
                               class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button> 
                             </form>
                             
-    		{{#if message}}
+    		
+                            
+                            </div>
+                        <div class="list-wrapper">
+                            <div>
+                                {{#if message}}
 		<p > {{message}}</p>
 		{{/if }}                    {{#if accounts}} 
        <p> {{#each accounts}}
         {{username}}
         {{/each}}</p>
         {{/if}}
-                            
                             </div>
-                        <div class="list-wrapper">
+                            {{#if existAccounts}}
+
+                            
                             <ul class="d-flex flex-column-reverse todo-list">
                                 <li>
                                     <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> For what reason would it be advisable. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
@@ -49,6 +55,7 @@
                                     <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Print bills <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
                                 </li>
                             </ul>
+                            {{/if}}
                         </div>
                     </div>
                 </div>
