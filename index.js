@@ -1,9 +1,13 @@
+/* eslint-disable quotes */
+/* eslint-disable no-undef */
+/* eslint-disable semi */
+/* eslint-disable indent */
 const express = require('express')
 const { json } = require('express/lib/response')
 const app = express()
 const fs = require('fs')
 const dataPath ='./file.json'  // path to our JSON file
-const bodyParser = require("body-parser")
+const bodyParser = require('body-parser')
 const ejs = require('ejs')
 const flash = require('express-flash')
 const session = require('express-session')
